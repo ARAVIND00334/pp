@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Name - MERN Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card {
+            background-color: rgba(26, 32, 44, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-button {
+            transition: transform 0.2s, background-color 0.2s;
+            font-size: 0.875rem;
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+            background-color: rgba(75, 85, 99, 0.8);
+        }
+        .nav-button.active {
+            background-color: #4f46e5;
+            color: white;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a1a] text-white">
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50">
+        <div class="bg-gray-800 bg-opacity-70 backdrop-blur-md rounded-full px-4 py-2 shadow-lg flex space-x-2 md:space-x-4">
+            <a href="#hero" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white active">Home</a>
+            <a href="#about" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white">About</a>
+            <a href="#skills" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white">Skills</a>
+            <a href="#projects" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white">Projects</a>
+            <a href="#resume" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white">Resume</a>
+            <a href="#contact" class="nav-button px-3 py-1 rounded-full text-gray-300 hover:text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <div class="content-container">
+        <!-- Hero Section -->
+        <section id="hero" class="section">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+                    Aravind Kumar
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    MERN Stack Developer | Crafting immersive web experiences | Vibe Coding
+                </p>
+                <a href="#projects" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="card max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
+                    About Me
+                </h2>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Enthusiastic and detail-oriented MERN Stack Developer with a strong foundation in building full-stack web applications. Skilled in developing responsive frontends with React, managing state efficiently, and building secure, scalable backends with Node.js, Express, and MongoDB. Experienced in integrating AI-powered tools to enhance functionality and deliver intelligent solutions. Known as a vibe coder who thrives on writing clean, functional, and optimized code while focusing on user experience and performance. Adept at translating ideas into working products and passionate about continuous learning in web development and AI-driven technologies.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="card max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-cyan-500">
+                    My Skills
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">React</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/nodejs-1.svg" alt="Node.js" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">Node.js</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/express-109.svg" alt="Express.js" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">Express.js</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="MongoDB" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">MongoDB</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">JavaScript</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="HTML5" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">HTML5</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS3" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">CSS3</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 bg-opacity-50 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" alt="Tailwind CSS" class="w-12 h-12 mb-2"/>
+                        <p class="text-sm md:text-base">Tailwind CSS</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="card max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-500">
+                    My Projects
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gray-700 bg-opacity-50 rounded-lg shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-xl font-bold mb-2 text-indigo-400">Test Case Generator with AI & GitHub Integration</h3>
+                        <p class="text-gray-300 mb-4 text-sm">
+Developed a full-stack application that integrates with GitHub to streamline the testing workflow. Users can connect their GitHub account, select a repository, and choose specific code files. The application uses AI to automatically generate relevant test cases and provide a concise code summary. Additionally, it allows pushing the generated test cases and updates directly to the repository via GitHub API. Built with a React frontend and Node.js backend, ensuring a responsive UI and secure authentication through OAuth.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">React</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Node.js</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Express</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Gemini API</span>
+                        </div>
+                        <a href="https://test-cases-frontend.onrender.com" class="text-indigo-400 hover:text-indigo-300 transition-colors" target="_blank" rel="noopener noreferrer">
+                            Website Link &rarr;
+                        </a>
+                    </div>
+                    <div class="p-6 bg-gray-700 bg-opacity-50 rounded-lg shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-xl font-bold mb-2 text-indigo-400">E-Commerce Website with Admin Panel & CRUD Operations</h3>
+                        <p class="text-gray-300 mb-4 text-sm">Built a full-featured e-commerce platform with a secure admin panel for managing products. Implemented complete CRUD operations — add, edit, update, and delete products — with real-time updates using Redux for state management. The frontend was developed in React for a responsive user experience, while the backend was powered by Django to handle authentication, product management, and API services. Designed to provide both customers and admins with a seamless shopping and management experience.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">React</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Redux</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Django</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors" target="_blank" rel="noopener noreferrer">
+                            Website Link &rarr;
+                        </a>
+                    </div>
+                    <div class="p-6 bg-gray-700 bg-opacity-50 rounded-lg shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+                        <h3 class="text-xl font-bold mb-2 text-indigo-400">Social Media Platform with Real-Time Interactions</h3>
+                        <p class="text-gray-300 mb-4 text-sm">Developed a modern social media application enabling users to create accounts, post content, like, comment, and connect with others. Integrated features such as real-time updates, profile customization, and secure authentication. The frontend was built with React for a dynamic, responsive UI, while the backend leveraged Django to manage user data, media uploads, and API endpoints. Designed with scalability in mind, ensuring smooth performance for both casual and active users.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">React</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">Node.js</span>
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded-full text-gray-200">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors" target="_blank" rel="noopener noreferrer">
+                            Website Link &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section">
+            <div class="card max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+                    My Resume
+                </h2>
+                <p class="text-gray-300 leading-relaxed text-lg mb-8">
+                    Interested in my professional background? You can download a PDF version of my resume to see a detailed overview of my experience, skills, and qualifications.
+                </p>
+                <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
+                    Download Resume (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="card max-w-lg w-full">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500">
+                    Get in Touch
+                </h2>
+                <div class="flex flex-col items-center mt-6 text-gray-300 space-y-2">
+                    <p class="text-lg">Aravind Kumar</p>
+                    <p>Email: <a href="mailto:iamaravind.kumar77@gmail.com" class="text-indigo-400 hover:underline">iamaravind.kumar77@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+919443651827" class="text-indigo-400 hover:underline">9443651827</a></p>
+                    <p>GitHub: <a href="https://github.com/ARAVIND00334" class="text-indigo-400 hover:underline" target="_blank" rel="noopener noreferrer">ARAVIND00334</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/aravind-kumar-78a765306" class="text-indigo-400 hover:underline" target="_blank" rel="noopener noreferrer">Aravind Kumar</a></p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-8">
+                    <!-- GitHub Profile Link -->
+                    <a href="https://github.com/ARAVIND00334" class="text-gray-400 hover:text-indigo-400 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <!-- LinkedIn Profile Link -->
+                    <a href="https://www.linkedin.com/in/aravind-kumar-78a765306" class="text-gray-400 hover:text-indigo-400 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // --- Three.js Setup ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // --- Lighting ---
+        const ambientLight = new THREE.AmbientLight(0x404040, 2);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0x4f46e5, 1.5);
+        pointLight.position.set(50, 50, 50);
+        scene.add(pointLight);
+        const pointLight2 = new THREE.PointLight(0x9f7aea, 1);
+        pointLight2.position.set(-50, -50, -50);
+        scene.add(pointLight2);
+
+        // --- Main 3D Object ---
+        const geometry = new THREE.TorusKnotGeometry(10, 2.5, 120, 18);
+        const material = new THREE.MeshStandardMaterial({ 
+            color: 0x6366f1, 
+            metalness: 0.8, 
+            roughness: 0.2 
+        });
+        const torusKnot = new THREE.Mesh(geometry, material);
+        scene.add(torusKnot);
+
+        // --- Starfield/Particles ---
+        const starVertices = [];
+        for (let i = 0; i < 10000; i++) {
+            const x = (Math.random() - 0.5) * 2000;
+            const y = (Math.random() - 0.5) * 2000;
+            const z = (Math.random() - 0.5) * 2000;
+            starVertices.push(x, y, z);
+        }
+        const starGeometry = new THREE.BufferGeometry();
+        starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+        const starMaterial = new THREE.PointsMaterial({ 
+            color: 0xffffff,
+            size: 0.7,
+            transparent: true,
+            opacity: 0.7
+        });
+        const stars = new THREE.Points(starGeometry, starMaterial);
+        scene.add(stars);
+
+        camera.position.z = 40;
+
+        // --- Mouse Interaction ---
+        let mouseX = 0;
+        let mouseY = 0;
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // --- Animation Loop ---
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Main object rotation
+            torusKnot.rotation.x += 0.001;
+            torusKnot.rotation.y += 0.002;
+
+            // Starfield rotation
+            stars.rotation.y += 0.0002;
+
+            // Camera movement based on mouse
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
+            camera.position.y += (mouseY * 5 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // --- Responsive Handling ---
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // --- Navigation and Scroll Handling ---
+        const navButtons = document.querySelectorAll('.nav-button');
+        const sections = document.querySelectorAll('.section');
+
+        function updateNav() {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('href').substring(1) === currentSection) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateNav);
+        // Initial call to set the active nav item on page load
+        document.addEventListener('DOMContentLoaded', updateNav);
+    </script>
+</body>
+</html>
